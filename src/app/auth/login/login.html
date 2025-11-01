@@ -1,0 +1,21 @@
+
+  <div class="page">
+    <div class="login-container">
+      <h2 id="loginheading">Login</h2>
+
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="email" placeholder="Enter your email">
+
+      <label>Password:</label>
+      <input type="password" [(ngModel)]="password" placeholder="Enter your password">
+
+      <button (click)="login()" id="loginbutton">Login</button>
+
+      <p *ngIf="loginError" style="color: red;">Invalid email or password!</p>
+      <p *ngIf="loginSuccess">Login successful</p>
+      <p>Dont have an Account? Click Signup</p>
+      
+      <button id="signupbutton" (click)="signup()">Signup</button>
+    </div>
+  </div>
+
