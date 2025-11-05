@@ -4,11 +4,16 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Login } from './auth/login/login';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { TaskList } from './task-list/task-list';
-import { Users } from './users/users';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TaskList } from './components/task-list/task-list';
+import { Users } from './components/users/users';
 import { AuthInterceptor } from './auth/auth-interceptor';
-import { Createuser } from './createuser/createuser';
+import { Createuser } from './components/createuser/createuser';
+import { Taskcard } from './components/taskcard/taskcard';
+import { Home } from './components/home/home';
+import { HoverHighlight } from './directives/hover-highlight';
+import { Createtask } from './components/createtask/createtask';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +22,18 @@ import { Createuser } from './createuser/createuser';
     TaskList,
     Users,
     Createuser,
+    Taskcard,
+    Home,
+    HoverHighlight,
+    Createtask,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

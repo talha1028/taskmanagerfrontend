@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,18 @@ export class AuthService {
       localStorage.removeItem('token');
     }
     this.router.navigate(['/login']);
+  }
+
+  getUserName(): string | null {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+
+    try {
+      const decoded: any = jwtDecode(token);
+      return decoded.name || null; 
+    } catch (e) {
+      console.error('Invalid token');
+      return null;
+    }
   }
 }

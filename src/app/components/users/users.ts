@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Userservice } from './userservice';
+import { Userservice } from '../../services/userservice';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,4 +18,9 @@ export class Users {
       this.users = data;
     });
   }
+  
+  tasks(){
+    this.router.navigate(['/tasklist']); 
+  }
+  
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,7 +23,7 @@ export class Login {
         this.authService.saveToken(res.accessToken)
         this.loginError = false;
         this.loginSuccess = true;
-        this.router.navigate(['/users']); 
+        this.router.navigate(['/home']); 
       },
 
       error: () => {

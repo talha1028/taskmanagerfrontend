@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CreateUserDto } from '../createuser/createuser.dto';
+import { CreateUserDto } from '../components/createuser/createuser.dto';
 
 @Injectable({
   providedIn: 'root'

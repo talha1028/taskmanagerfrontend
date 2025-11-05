@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CreateUserDto } from './createuser.dto';
-import { Userservice } from '../users/userservice';
+import { Userservice } from '../../services/userservice';
 
 @Component({
   selector: 'app-createuser',
