@@ -1,0 +1,22 @@
+
+<div class="task-card" [ngClass]="{'completed': task.status === 'completed'}">
+  <div class="task-header">
+    <h3>{{ task.title }}</h3>
+
+    <!-- Toggle for completion -->
+    <button class="toggle-btn" (click)="toggleStatus()" appHoverHighlight>
+      {{ task.status === 'completed' ? '✅ Completed' : '⏳ Mark Done' }}
+    </button>
+  </div>
+
+  <p class="description">{{ task.description }}</p>
+
+  <div class="task-meta">
+    <span class="priority" [ngClass]="task.priority.toLowerCase()">
+      {{ task.priority }}
+    </span>
+    <span class="due">
+      {{ getDaysRemaining(task.dueDate) }} 
+    </span>
+  </div>
+</div>

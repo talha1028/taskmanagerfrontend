@@ -1,0 +1,30 @@
+<div class="filter-bar">
+  <div class="filters-container">
+    <label class="filters-label">FILTERS</label>
+    <div class="filters">
+      <!-- Bind to component properties and trigger updateFilteredTasks -->
+      <select [(ngModel)]="selectedStatus" (change)="updateFilteredTasks()">
+        <option value="all">All Statuses</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <select [(ngModel)]="selectedPriority" (change)="updateFilteredTasks()">
+        <option value="all">All Priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+  </div>
+  
+  <button class="add-task-btn" (click)="gotoaddTask()">Add Task</button>
+</div>
+
+<!-- Use async pipe to unwrap filteredTasks$ observable -->
+<div *ngFor="let task of filteredTasks$ | async">
+  <app-taskcard 
+    [task]="task" 
+    (statusChanged)="onTaskStatusChanged($event)">
+  </app-taskcard>
+</div>

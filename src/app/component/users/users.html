@@ -1,0 +1,9 @@
+<button (click)="getUsers()" id="usersbutton">Get users</button>
+<ul>
+    <li *ngFor="let u of users;let i = index">
+    {{u.name}}
+    {{u.email}}
+    {{u.Approved}}
+    </li>
+</ul>
+<button (click)="tasks()" id="taskbutton">Move to Task Page</button>

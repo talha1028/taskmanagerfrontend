@@ -1,0 +1,21 @@
+#usersbutton {
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-left: 30px;
+}
+
+#usersbutton:hover {
+    cursor: pointer;
+}
+
+#taskbutton:hover {
+    cursor: pointer;
+}
+
+#taskbutton {
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-left: 30px;
+}
