@@ -25,11 +25,9 @@ export const reducers = {
   tasks: tasksReducer
 };
 
-
 @NgModule({
   declarations: [
     App,
-    Createuser,
     Home,
     Users,
     Login
